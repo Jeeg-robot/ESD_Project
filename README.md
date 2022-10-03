@@ -28,4 +28,5 @@ Nel caso 1.3) le papabili soluzioni/idee sono le seguenti:
 Il punto 1.4) riguarda l’alimentazione della scheda con l’aggiunta di un controllore per l’uso della porta USB type C
 
 PROS: Non eccessiva complessità software, utilizzo di sensori economici, tensioni e correnti di lavoro basse, facile prototipazione, test separati delle singole fasi
+
 CONTRO:discreta quantità di circuiteria di condizionamento per i sensori e per la parte di alimentazione e per i LED—>complessità PCB 
