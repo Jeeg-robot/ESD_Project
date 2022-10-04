@@ -107,8 +107,7 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-/*COMMENT*/
-	  /*COMMENTO 2*/
+
     /* USER CODE END WHILE */
     MX_USB_HOST_Process();
 
