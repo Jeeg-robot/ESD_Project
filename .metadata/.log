@@ -760,3 +760,6 @@ Caused by: org.eclipse.core.internal.resources.ResourceException: Invalid projec
 
 !ENTRY org.eclipse.equinox.p2.repository 2 0 2022-10-22 23:00:31.217
 !MESSAGE Using unsafe http transport to retrieve http://downloads.genuitec.com/downloads/products/devstyle/updates/ds20220613a, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-10-22 23:07:46.002
+!MESSAGE Using unsafe http transport to retrieve http://downloads.genuitec.com/downloads/products/codetogether/updates/ct20220914/content.xml.xz, see CVE-2021-41033. Consider using https instead.
