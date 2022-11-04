@@ -46,8 +46,7 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-Lcd_PortType ports[] = { GPIOC, GPIOB, GPIOA, GPIOA };
-Lcd_PinType pins[] = {GPIO_PIN_7, GPIO_PIN_6, GPIO_PIN_7, GPIO_PIN_6};
+
 Lcd_HandleTypeDef lcd;
 
 /* USER CODE END PV */
