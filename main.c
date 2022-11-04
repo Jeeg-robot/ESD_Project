@@ -47,7 +47,7 @@
 
 /* USER CODE BEGIN PV */
 
-Lcd_HandleTypeDef lcd;
+Lcd_HandleTypeDef lcd1;
 
 /* USER CODE END PV */
 
@@ -94,7 +94,7 @@ int main(void)
   /* USER CODE BEGIN 2 */
   Lcd_PortType ports[] = { GPIOC, GPIOB, GPIOA, GPIOA };
 Lcd_PinType pins[] = {GPIO_PIN_7, GPIO_PIN_6, GPIO_PIN_7, GPIO_PIN_6};
-  lcd = Lcd_create(ports, pins, GPIOB, GPIO_PIN_5, GPIOB, GPIO_PIN_4, LCD_4_BIT_MODE);
+  lcd1 = Lcd_create(ports, pins, GPIOB, GPIO_PIN_5, GPIOB, GPIO_PIN_4, LCD_4_BIT_MODE);
   /*uint16_t button_val = 0;
   // Lcd_PortType ports[] = { D4_GPIO_Port, D5_GPIO_Port, D6_GPIO_Port, D7_GPIO_Port };
    Lcd_PortType ports[] = { GPIOC, GPIOB, GPIOA, GPIOA };
@@ -181,27 +181,23 @@ void SystemClock_Config(void)
 /* USER CODE BEGIN 4 */
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
-	/*Lcd_PortType ports[] = { GPIOC, GPIOB, GPIOA, GPIOA };
-	Lcd_PinType pins[] = {GPIO_PIN_7, GPIO_PIN_6, GPIO_PIN_7, GPIO_PIN_6};
-	Lcd_HandleTypeDef lcd;
-	lcd = Lcd_create(ports, pins, GPIOB, GPIO_PIN_5, GPIOB, GPIO_PIN_4, LCD_4_BIT_MODE);*/
-
+	
 	if(GPIO_Pin == B1_button_Pin)
 	{
 		static bool prev_val;
 		if(prev_val == false)
 		{
 			HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, SET);
-			//Lcd_cursor(&lcd, 0,1);
-			//Lcd_string(&lcd, "Ciao a tutti");
+			//Lcd_cursor(&lcd1, 0,1);
+			//Lcd_string(&lcd1, "Ciao a tutti");
 			prev_val = true;
 		}
 		else
 		{
 			HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, RESET);
-			/*Lcd_clear(&lcd);
-			Lcd_cursor(&lcd, 1, 1);
-			Lcd_string(&lcd, "Buon Halloween");*/
+			/*Lcd_clear(&lcd1);
+			Lcd_cursor(&lcd1, 1, 1);
+			Lcd_string(&lcd1, "Buon Halloween");*/
 			prev_val = false;
 		}
 	}
