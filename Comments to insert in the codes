@@ -1,0 +1,17 @@
+
+VISUALIZE.C
+uint8_t g_lcd_refresh_counter=0; :
+utilizzato in interrupt stm32fxxv nella funziona systic_endler. Ad una frequenza di 1khz il suo valore aumenta di 1 quando arriva a 100 definito dalla definziione  # define LCD_REFRESH_THRESHOLD_COUNTER 100
+il valore viene settato a 0 e viene settato il flag bool b_lcd_refresh_flag = FLAG_NOT_SET;
+
+VISUALIZE.H
+# define LCD_REFRESH_THRESHOLD_COUNTER 100; :
+massimo valore del counter per refresh lcd
+
+""
+# define FIRST_ROW 0x00 //TODO: comment 
+# define SECOND_ROW 0X80 //TODO : comment 
+# define CURSOR_1 0 //TODO : comment 
+# define CURSOR_2 1 //TODO : comment :
+commenti da inserire sapendo ciò che abbiamo fatto
+
