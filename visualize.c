@@ -15,7 +15,8 @@
  for global variables "g" before the name, "b for boolean*/
 
 param_case_t g_param_case = 0; // this parameter contain the state chosen by the user for the variable to visualize.
-uint8_t buffer = 0;
+uint8_t g_lcd_refresh_counter=0; //This code is used within the interrupt function systic_endler. At a frequency of 1kHz, the value of this variable increases by 1 when it reaches the value of 100, as defined by the LCD_REFRESH_THRESHOLD_COUNTER definition. 
+								//Then, the value is reset to 0 and the b_lcd_refresh_flag is set.
 UART_HandleTypeDef *g_putty_uart;
 
 bool b_uart_int_flag = FLAG_NOT_SET;
@@ -45,19 +46,14 @@ void visualize_virtual_main(void) {
 		break;
 
 		case PHASE_SHIFT:
-#ifndef PUTTY_TEST
-			//printf("PHASE_SHIFT\n");
-#endif
+
 
 #ifndef LCD_TEST
 		        print_on_lcd();
-		         #endif
+#endif
 		break;
 
 		case POWER_FACTOR:
-#ifndef PUTTY_TEST
-			//printf("POWER FACTOR\n");
-#endif
 
 #ifndef LCD_TEST
 		         print_on_lcd();
@@ -65,9 +61,6 @@ void visualize_virtual_main(void) {
 		break;
 
 		case ACTIVE_POWER:
-#ifndef PUTTY_TEST
-			//printf("ACTIVE POWER\n");
-#endif
 
 #ifndef LCD_TEST
 		         print_on_lcd();
@@ -75,9 +68,10 @@ void visualize_virtual_main(void) {
 		break;
 
 		case REACTIVE_POWER:
-#ifndef PUTTY_TEST
-			//printf("REACTIVE POWER\n");
-#endif
+        break;
+		
+		//to do: print on
+		
 		case APPARENT_POWER:
 		break;
 #ifndef LCD_TEST
@@ -86,24 +80,13 @@ void visualize_virtual_main(void) {
 		break;
 
 		case POWER_CONSUMPTION:
-#ifndef PUTTY_TEST
-			//printf("POWER CONSUMPTION \n");
-#endif
+
 
 #ifndef LCD_TEST
 		         print_on_lcd();
 		         #endif
 		break;
 
-//		default:
-//#ifndef PUTTY_TEST
-//			//printf("Wrong number inserted\n");
-//#endif
-//
-//#ifndef LCD_TEST
-//		         print_on_lcd();
-//		         #endif
-//			break;
 		}
 	}
 }

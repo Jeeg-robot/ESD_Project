@@ -28,7 +28,7 @@ the report at section "visualization block" */
 # define SECOND_ROW 0X80 //First element of the second row specified by the datasheet
 # define CURSOR_1 0 //TODO : comment 
 # define CURSOR_2 1 //TODO : comment 
-
+# define LCD_REFRESH_THRESHOLD_COUNTER 100; //max value of refresh lcd counter
 
 //# define PUTTY_TEST 1
 # define LCD_TEST 1
@@ -64,7 +64,7 @@ typedef enum
 extern param_case_t g_param_case;
 extern bool b_lcd_refresh_flag;
 extern bool b_uart_int_flag;
-
+extern uint8_t g_lcd_refresh_counter;
 /*visualize.h private functions*/
 
 void visualize_virtual_main( void ); 
