@@ -21,7 +21,7 @@ I2C_HandleTypeDef *g_lcd_i2c;
 
 
 
-/*function n: */
+/*function n.1: the function uses a series of bitwise operations to prepare the data to be sent to the display.*/
 void lcd_send_cmd ( char command )
 {
   char l_data_u, l_data_l;
@@ -35,7 +35,7 @@ void lcd_send_cmd ( char command )
 	HAL_I2C_Master_Transmit (g_lcd_i2c, LCD_SLAVE_ADRESS,(uint8_t *)l_data, I2C_PCK_SIZE, I2C_DELAY);
 }
 
-/*function n:*/
+/*function n.2: the function uses bitwise operations to prepare the data before it is sent to the display.*/
 void lcd_send_data( char data )
 {
 	char l_data_u, l_data_l;
@@ -49,7 +49,8 @@ void lcd_send_data( char data )
 	HAL_I2C_Master_Transmit (g_lcd_i2c, LCD_SLAVE_ADRESS,(uint8_t *)l_data, I2C_PCK_SIZE, I2C_DELAY);
 }
 
-/*function n:*/
+/*function n.3: the function is used to clear the entire display by sending a command to the display 
+and then sending 100 spaces to the display.*/
 void lcd_clear ( void )
 {
 	lcd_send_cmd (0x00);
@@ -59,7 +60,7 @@ void lcd_clear ( void )
 	}
 }
 
-/*function n:*/
+/*function n.4: the function is used to set the cursor position on the display. */
 void lcd_put_cur( int row, int column )
 {
     switch (row)
@@ -75,7 +76,9 @@ void lcd_put_cur( int row, int column )
     lcd_send_cmd (column);
 }
 
-/*function n:*/
+/*function n.5: the function is used to initialize the LCD display. It takes an I2C_HandleTypeDef pointer as a parameter 
+and uses it to make a copy of the I2C variables from the main.c file. This allows for easy modification of the I2C configuration 
+in one location rather than having to change it in multiple functions throughout the code.*/
 void lcd_init( I2C_HandleTypeDef *lcd_i2c )
 {
     //making a copy of the i2c variables from main.c 
@@ -104,13 +107,14 @@ void lcd_init( I2C_HandleTypeDef *lcd_i2c )
 	lcd_send_cmd (0x0C); //Display on/off control --> D = 1, C and B = 0. (Cursor and blink, last two bits)
 }
 
-/*function n:*/
+/*function n.6: the function is used to send a string of characters to the LCD display. 
+The function takes a pointer to a character array (a string) as a parameter.*/
 void lcd_send_string( char *str )
 {
 	while (*str) lcd_send_data(*str++);
 }
 
-/*function n: */
+/*function n.7: the function is used to print a string of characters on the LCD display in a specific position.*/
 void print_on_lcd( char variable[] )
 {
     lcd_clear();
