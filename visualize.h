@@ -24,8 +24,8 @@ the report at section "visualization block" */
 
 /*visualize.h private define */
 
-# define FIRST_ROW 0x00 //TODO: comment 
-# define SECOND_ROW 0X80 //TODO : comment 
+# define FIRST_ROW 0x00 //First element of the first row specified by the datasheet
+# define SECOND_ROW 0X80 //First element of the second row specified by the datasheet
 # define CURSOR_1 0 //TODO : comment 
 # define CURSOR_2 1 //TODO : comment 
 
