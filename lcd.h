@@ -1,6 +1,4 @@
-
 /*
-
 @brief: lcd.h
 @file: lcd.h header file
 
@@ -18,17 +16,15 @@ the report at section "visualization block"
 #include <stm32f4xx_hal.h>
 
 /*lcd.h private define*/
-
-# define FIRST_ROW 0x00 //TODO: comment 
-# define FIRST_COLUMN 0x80 //TODO : comment
-# define CURSOR_1 0 //TODO : comment 
-# define CURSOR_2 1 //TODO : comment 
+# define FIRST_ROW 0x00 //address of the first row of the LCD retrieved by the datasheet
+# define FIRST_COLUMN 0x80 //address of the first column of the LCD retrieved by the datasheet
+# define CURSOR_1 0 //indicate the first row of the LCD
+# define CURSOR_2 1 //indicate the second column of the LCD
 # define LCD_SLAVE_ADRESS 0x4E // slave address value in hex. it is written in the datasheet of lcd 
 # define I2C_DELAY 100
 # define I2C_PCK_SIZE 4
 
 /*lcd.h private function*/
-
 void lcd_init( I2C_HandleTypeDef *lcd_i2c ); 
 void lcd_send_cmd ( char command );
 void lcd_send_data ( char data );

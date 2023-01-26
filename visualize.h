@@ -4,14 +4,12 @@ This is the header file file of visualization block
 All the function and variable used in this file are commented, but all the specification 
 about the functions, how they where developed, variables and all the features can be read in
 the report at section "visualization block" */
-
 /*********/
 
 #ifndef __VISUALIZE_H
 # define __VISUALIZE_H
 
 /*visualize.h private include*/
-
 # include <stm32f4xx_hal.h>
 # include <stdio.h>
 # include <string.h>
@@ -23,7 +21,6 @@ the report at section "visualization block" */
 
 
 /*visualize.h private define */
-
 # define FIRST_ROW 0x00 //First element of the first row specified by the datasheet
 # define SECOND_ROW 0X80 //First element of the second row specified by the datasheet
 # define CURSOR_1 0 //TODO : comment 
@@ -39,8 +36,7 @@ the report at section "visualization block" */
 /*visualize.h private typedef */
 
 
-// define a new type of enum variables which contains all the possible variables to visualize on Lcd and on Putty 
-
+// define a new type of enum variables which contains all the possible variables to visualize on LCD and on Putty 
 typedef enum
 {
 	NONE = 0,
@@ -60,16 +56,14 @@ typedef enum
 }bit_status_t;
 
 /*visualize.h extern variables*/
-
 extern param_case_t g_param_case;
 extern bool b_lcd_refresh_flag;
 extern bool b_uart_int_flag;
 extern uint8_t g_lcd_refresh_counter;
-/*visualize.h private functions*/
 
+/*visualize.h private functions*/
 void visualize_virtual_main( void ); 
 void HAL_UART_RxCpltCallback( UART_HandleTypeDef * huart );
 void ask_new_variable( void );
 void setup_putty_uart( UART_HandleTypeDef * huart );
 #endif  /* VISUALIZE_H*/
-
