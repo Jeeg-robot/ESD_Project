@@ -3,7 +3,7 @@
  @file * visualize.c
 
  This software contain the following feautures:
- 1) visualization on Lcd by i2c the following parameters : Phase Shift, Power Factor, Active Power,
+ 1) visualization on LCD by i2c the following parameters : Phase Shift, Power Factor, Active Power,
  Reactive Power, Apparent Power, Power Consumption.
  2) UI by using serial communication (UART protocol) by using PUTTY. The standard library is used so the "printf" function refer to the visualization on PUTTY
  */
@@ -26,7 +26,7 @@ bool b_lcd_refresh_flag = FLAG_NOT_SET;
 
 #define _IsSet(reg,bit) (reg >> (bit - 1)) & 0x1
 
-/*function n : this is the virtual main for visualize.c source file. */
+/*function n.1: this is the virtual main for visualize.c source file. */
 
 void visualize_virtual_main(void) {
 
