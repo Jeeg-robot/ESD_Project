@@ -49,7 +49,7 @@ void visualize_virtual_main(void) {
 
 #ifndef LCD_TEST
 		        print_on_lcd();
-#endif
+				#endif
 		break;
 
 		case POWER_FACTOR:
