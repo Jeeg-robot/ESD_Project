@@ -13,7 +13,7 @@ the report at section "visualization block" */
 # include <stm32f4xx_hal.h>
 # include <stdio.h>
 # include <string.h>
-# include  <lcd.h>
+# include <lcd.h>
 # include <stdlib.h>
 # include <main.h> //MODIFICARE
 # include <usart.h> //MODIFICARE
@@ -23,19 +23,13 @@ the report at section "visualization block" */
 /*visualize.h private define */
 # define FIRST_ROW 0x00 //First element of the first row specified by the datasheet
 # define SECOND_ROW 0X80 //First element of the second row specified by the datasheet
-# define CURSOR_1 0 //TODO : comment 
-# define CURSOR_2 1 //TODO : comment 
+# define CURSOR_1 0 //indicate the first row of the LCD
+# define CURSOR_2 1 //indicate the second column of the LCD
 # define LCD_REFRESH_THRESHOLD_COUNTER 100; //max value of refresh lcd counter
-
-//# define PUTTY_TEST 1
 # define LCD_TEST 1
 # define COMMAND_SIZE 1
 
-
-
 /*visualize.h private typedef */
-
-
 // define a new type of enum variables which contains all the possible variables to visualize on LCD and on Putty 
 typedef enum
 {
