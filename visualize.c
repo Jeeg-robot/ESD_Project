@@ -47,7 +47,6 @@ void visualize_virtual_main(void) {
 
 		case PHASE_SHIFT:
 
-
 #ifndef LCD_TEST
 		        print_on_lcd();
 #endif
@@ -68,19 +67,20 @@ void visualize_virtual_main(void) {
 		break;
 
 		case REACTIVE_POWER:
-        break;
-		
-		//to do: print on
+
+#ifndef LCD_TEST
+				print_on_lcd();
+				#endif
+		break;
 		
 		case APPARENT_POWER:
-		break;
+
 #ifndef LCD_TEST
-		         print_on_lcd();
-		         #endif
+				print_on_lcd();
+				#endif
 		break;
 
 		case POWER_CONSUMPTION:
-
 
 #ifndef LCD_TEST
 		         print_on_lcd();
